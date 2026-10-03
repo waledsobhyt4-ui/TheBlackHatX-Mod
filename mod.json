@@ -1,20 +1,14 @@
-cmake_minimum_required(VERSION 3.25)
-
-project(TheBlackHatX VERSION 1.0.0)
-
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Das von der GitHub Action bereitgestellte Geode SDK finden
-find_package(Geode REQUIRED)
-
-# Mod konfigurieren
-setup_geode_mod(
-    ID com.theblackhatx.mod
-    NAME "TheBlackHatX"
-    VERSION "1.0.0"
-    DEVELOPER "TheBlackHatX"
-    DESCRIPTION "Ein krasser Mod von TheBlackHatX"
-    SOURCES 
-        src/main.cpp
-)
+{
+  "geode": "4.0.0",
+  "gd": {
+    "win": "2.2074",
+    "android": "2.2074",
+    "mac": "2.2074",
+    "ios": "2.2074"
+  },
+  "id": "com.theblackhatx.mod",
+  "version": "1.0.0",
+  "name": "TheBlackHatX",
+  "developer": "TheBlackHatX",
+  "description": "Ein krasser Mod von TheBlackHatX"
+}
