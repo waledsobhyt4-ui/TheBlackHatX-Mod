@@ -4,6 +4,11 @@ project(TheBlackHatX)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(TheBlackHatX SHARED src/main.cpp)
+include(${CMAKE_CURRENT_SOURCE_DIR}/geode-sdk-clone/cmake/Geode.cmake)
 
-target_link_libraries(TheBlackHatX PRIVATE Geode::Geode)
+setup_geode_mod(
+    ID com.theblackhatx.mod
+    NAME TheBlackHatX
+    VERSION 1.0.0
+    SOURCES src/main.cpp
+)
