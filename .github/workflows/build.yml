@@ -9,28 +9,25 @@ on:
 
 jobs:
   build:
+    name: Build ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        config:
-          - name: Windows
+        include:
+          - platform: win
             os: windows-latest
-            platform: win
-          - name: Android 32-bit
+          - platform: android32
             os: ubuntu-latest
-            platform: android32
-          - name: Android 64-bit
+          - platform: android64
             os: ubuntu-latest
-            platform: android64
-
-    name: Build ${{ matrix.config.name }}
-    runs-on: ${{ matrix.config.os }}
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build Geode Mod
+      # DIESER SCHRITT LÄDT DAS GEODE SDK & SETZT GEODE_SDK FÜR CMAKE
+      - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          platform: ${{ matrix.config.platform }}
+          platform: ${{ matrix.platform }}
