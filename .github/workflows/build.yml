@@ -5,13 +5,30 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - name: Windows
+            os: windows-latest
+          - name: Android
+            os: ubuntu-latest
+            target: Android
+
+    name: Build ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Build Mod
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Build Geode Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          sdk: latest
+          target: ${{ matrix.config.target }}
