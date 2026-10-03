@@ -5,10 +5,8 @@ project(TheBlackHatX VERSION 1.0.0)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# CMake mitteilen, wo die Geode-Dateien im Submodul liegen
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/geode-sdk-clone/cmake")
-
-include(Geode)
+# Direkter Pfad zur Geode-CMake-Datei im Submodul
+include("${CMAKE_CURRENT_SOURCE_DIR}/geode-sdk-clone/cmake/Geode.cmake")
 
 setup_geode_mod(
     ID com.theblackhatx.mod
