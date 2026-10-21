@@ -1,14 +1,50 @@
 {
-  "geode": "4.0.0",
-  "gd": {
-    "win": "2.2074",
-    "android": "2.2074",
-    "mac": "2.2074",
-    "ios": "2.2074"
-  },
-  "id": "com.theblackhatx.mod",
-  "version": "1.0.0",
-  "name": "TheBlackHatX",
-  "developer": "TheBlackHatX",
-  "description": "Ein krasser Mod von TheBlackHatX"
+    "geode": "v4.0.0",
+    "gd": {
+        "android": "*",
+        "ios": "*",
+        "win": "*",
+        "mac": "*"
+    },
+    "id": "waledsobhyt.waledsobhyt4-ui",
+    "name": "waledsobhyt4-ui",
+    "version": "v1.0.0",
+    "developer": "WaledSobhYT",
+    "description": "Noclip, Infinity Jump and simple Bot by WaledSobhYT",
+    "tags": ["cheat", "gameplay", "utility"],
+    "settings": {
+        "noclip": {
+            "name": "Noclip",
+            "description": "Player cannot die from obstacles",
+            "type": "bool",
+            "default": false
+        },
+        "infinity-jump": {
+            "name": "Infinity Jump",
+            "description": "Allows unlimited jumps (always can jump)",
+            "type": "bool",
+            "default": false
+        },
+        "bot": {
+            "name": "Bot (Auto Jump)",
+            "description": "Simple auto-clicker / spam jump bot",
+            "type": "bool",
+            "default": false
+        },
+        "bot-interval": {
+            "name": "Bot Click Interval (ms)",
+            "description": "How fast the bot clicks (lower = faster)",
+            "type": "int",
+            "default": 50,
+            "min": 10,
+            "max": 500
+        },
+        "show-indicators": {
+            "name": "Show Status Indicators",
+            "description": "Show ON/OFF text in the top right while playing",
+            "type": "bool",
+            "default": true
+        }
+    }
 }
+
